@@ -1,4 +1,3 @@
-import React from 'react'
 
 const NewsItem = (props) => {
 
@@ -8,8 +7,6 @@ It simply sits there and waits for the News component to pass down data via prop
 Because it has no local state to initialize, delete the constructor here. It just needs a standard render() method:
 
 */
-
-
 
     // It directly reads what it was given by its parent
     let {title,description,imgUrl, moreInfo, author,date,source}=props;//destructing 

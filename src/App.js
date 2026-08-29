@@ -2,12 +2,13 @@
 import './App.css';
 
 import React, {useState} from 'react'
-import NavBar from './NavBar';
+import NavBar from './components/NavBar.js'
 //here NavBar is not inside components folder else 
 // import NavBar from './components/NavBar';
-import News from './News';
-import NewsItem from './News';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import News from './components/News.js';
+import Home from './components/Home.js';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 
 /*
@@ -55,7 +56,7 @@ const[progress,setProgress]=useState(0)
 
   
     return (
-      <Router>-
+      <Router>
       <div>
         <NavBar/>
         <LoadingBar
@@ -67,6 +68,7 @@ const[progress,setProgress]=useState(0)
 
         {/* You MUST wrap your Route components inside Routes */}
         <Routes>
+          < Route path="/" element={ <Home/>}/>
           <Route path="/Breaking" element={<News setProgress={setProgress} key="breaking" country="in" category="breaking"  myAPIkey={myAPIkey}/>} />
           <Route path="/Business" element={<News setProgress={setProgress} key="business" country="in" category="business"  myAPIkey={myAPIkey}/>} />
           <Route path="/Crime" element={<News setProgress={setProgress} key="crime" country="in" category="crime"  myAPIkey={myAPIkey}/>} />
